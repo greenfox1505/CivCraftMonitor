@@ -10,10 +10,16 @@ app.get('/apiPre', function (req, res) {
 	var msg = "<html><head></head><body><pre>" + (JSON.stringify(listener.sorted(),null,2)) + "</pre></body></html>"
 	res.send(msg);
 })
+app.get('/api.js', function (req, res) {
+	console.log("serving /apiPad", Date.now());
+	var msg = req.param("callback") + "(" + JSON.stringify(listener.sorted()) + ");"
+	res.send(msg);
+})
 
 app.get('/api', function (req, res) {
-  var msg = JSON.stringify(listener.sorted())
-  res.send(msg);
+	console.log("serving /api", Date.now());
+	var msg = JSON.stringify(listener.sorted())
+	res.send(msg);
 })
 
 

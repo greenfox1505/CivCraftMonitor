@@ -45,8 +45,15 @@ module.exports = function(PORT){
 	data.sorted = function(){
 		console.log("sorting");
 		var output = []
+		var now = Date.now();
 		for(i in data.data){
-			output.push(data.data[i]);
+			if((now - data.data[i].lastSeen) > (1000 * 60 * 5)){
+				console.log("killing", i , " age ", data.data[i].lastSeen)
+				delete data.data[i];
+			}
+			else{
+				output.push(data.data[i]);
+			}
 		}
 		output.sort(function(a,b){
 			return b.currentPlayers - a.currentPlayers;
