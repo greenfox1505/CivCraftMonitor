@@ -22,5 +22,8 @@
   "homepage": "https://github.com/greenfox1505/CivCraftMonitor#readme",
   "dependencies": {
     "express": "^4.14.0"
+  },
+  "bin": {
+    "CivCraftMonitor": "run.js"
   }
 }
