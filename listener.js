@@ -6,12 +6,10 @@ module.exports = function(PORT){
 	data.server = dgram.createSocket('udp4');
 	
 	//on error function
-	data.onError = function(){
-		console.error(err);
-	};data.server.on('error', (err) => {data.onError(err)})
+	data.server.on('error', (err) => {console.error(err);})
 
 	//on message function
-	data.onMessage = function(msg, rinfo){
+	data.server.on('message', (msg, rinfo) => {
 		if(/\</.test(msg)){console.log("shitty input!");}
 		else{
 			//maybe I should stringify this thing instead...
@@ -37,9 +35,6 @@ module.exports = function(PORT){
 			data.data[newMSG[0]] = packet;
 		}
 		console.log(`server got: ${msg} from ${rinfo.address}:${rinfo.port}`);
-	}
-	data.server.on('message', (msg, rinfo) => {
-		data.onMessage(msg,rinfo);
 	});
 
 	data.sorted = function(){

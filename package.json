@@ -1,0 +1,26 @@
+{
+  "name": "civcraft_monitor",
+  "version": "1.0.0",
+  "description": "A tool that monitors CivCraft servers.",
+  "main": "run.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/greenfox1505/CivCraftMonitor.git"
+  },
+  "keywords": [
+    "civcraft",
+    "minecraft"
+  ],
+  "author": "Ryan Leverenz <me@ryanleverenz.net> (https://ryanleverenz.net)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/greenfox1505/CivCraftMonitor/issues"
+  },
+  "homepage": "https://github.com/greenfox1505/CivCraftMonitor#readme",
+  "dependencies": {
+    "express": "^4.14.0"
+  }
+}
