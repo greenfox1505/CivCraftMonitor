@@ -5,6 +5,7 @@ var express = require('express')
 var app = express()
 
 app.use("/netizen539/Servers" ,express.static('static'))
+app.use("/" ,express.static('static'))
 app.use(express.static('static'))
 app.get('/apiPre', function (req, res) {
 	console.log("serving /apiPre", Date.now());
