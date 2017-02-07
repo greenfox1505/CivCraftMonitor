@@ -4,9 +4,12 @@ var listener = new require("./listener.js")(25580);
 var express = require('express')
 var app = express()
 
-app.use("/netizen539/Servers" ,express.static('static'))
-app.use("/" ,express.static('static'))
-app.use(express.static('static'))
+var static = express.static(__dirname + '/static')
+
+
+app.use("/netizen539/Servers" , static );
+app.use(static)
+
 app.get('/apiPre', function (req, res) {
 	console.log("serving /apiPre", Date.now());
 	var msg = "<html><head></head><body><pre>" + (JSON.stringify(listener.sorted(),null,2)) + "</pre></body></html>"
