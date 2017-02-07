@@ -1,6 +1,6 @@
 {
   "name": "civcraft_monitor",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A tool that monitors CivCraft servers.",
   "main": "run.js",
   "scripts": {
